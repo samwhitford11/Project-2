@@ -30,11 +30,10 @@ app.use(
 // app.get('/', homeRoutes)
 // app.get('/store', storeRoutes)
 // app.get('/user', userRoutes)
-app.use('/fruits', FruitRouter)
-app.use('/user', UserRouter)
+
 
 app.get('/', (req, res) => {
-    res.render("index.ejs")
+    res.send("index.ejs")
 });
 const PORT = process.env.PORT || 4111
 app.listen(PORT, ()=> console.log(`Who let the dogs out on port: ${PORT}`))
