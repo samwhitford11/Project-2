@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+
+  <body>
+    <main>
+      <div>
+
+        <article>
+          <h2><%= trail.name %> - <%= trail.isComplete ? "Done" : "Not Done" %></h2>
+          <h3>Location: <%= trail.location %> </h3>
+          <h3>Distance: <%= trail.distance %></h3>
+          <h3>Primary Direction: <%= trail.primaryDirection %></h3>
+          <h3>Difficulty: <%= trail.difficulty %></h3>
+
+  
+          <a href="/trails/<%= trail._id %>/edit">
+            <button>Edit</button></a>
+          <form action="/trails/<%= trail._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete"/>
+          </form>
+          <a href="/trails/">
+            <button>Back</button></a>
+        </article>
+
+      </div>
+    </main>
+  </body>
+</html>
+
