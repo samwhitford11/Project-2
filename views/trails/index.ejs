@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+     <%- include('./partials/head.ejs') %>
+
+    <body>
+       
+
+
+        <main>
+            <div>
+                <a href="/trails/new"><button>Add New Trail</button></a>
+                
+                <% for (trail of trails) { %>
+                    <article>
+                        <a href="/trails/<%= trail._id %>">
+                            <h2>
+                                <%= trail.name %> - <%= trail.isComplete ? "Done" : "Not done" %>
+                            </h2>
+                        </a>
+
+                    </article>
+
+                <% } %> 
+                <!-- <a href="/user/logout"><button>Logout</button></a> -->
+            </div>
+        </main>
+    </body>
+</html>

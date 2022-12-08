@@ -5,8 +5,10 @@ const methodOverride = require('method-override') // allows us to override post 
 
 
 
-const session = require('express-session');
+const TrailRouter = require('./controllers/trail')
+// const session = require('express-session');
 const MongoStore = require('connect-mongo');
+const { default: mongoose } = require("mongoose");
 
 const app = express()
 
@@ -18,14 +20,17 @@ app.use(morgan('tiny'))
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended:true}))
 app.use(express.static('public'))
-app.use(
-    session({
-    secret: process.env.SECRET,
-    store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL}),
-    saveUnintialized: true,
-    resave: false,
-    })
-);
+app.use(TrailRouter)
+// app.use(
+//     session({
+//     secret: process.env.SECRET,
+//     store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL}),
+//     saveUnintialized: true,
+//     resave: false,
+//     })
+// );
+
+
 
 // app.get('/', homeRoutes)
 // app.get('/store', storeRoutes)
