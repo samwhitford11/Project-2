@@ -26,15 +26,6 @@ router.get('/trails/new', (req, res) => {
     res.render("trails/new.ejs")
 });
 
-//Show Route
-router.get('/trails/:id', (req, res) => {
-    const id = req.params.id
-
-    Trail.findById(id, (err, trail) => {
-        res.render('trails/show.ejs', {trail})
-    });
-});
-
 //Create Route / POST
 router.post("/trails", (req ,res) => {
     req.body.isComplete = req.body.isComplete === 'on' ? true: false;
@@ -63,23 +54,22 @@ router.put('/trails/:id', (req, res) => {
 });
 
 // Delete Route
+router.delete('/trails/:id', async (req, res) => {
+    Trail.findByIdAndDelete(req.params.id, (err, deleteTrail) => {
+        console.log(err, deleteTrail)
+        res.redirect('/trails')
+    });
+});
 
 
+//Show Route
+router.get('/trails/:id', (req, res) => {
+    const id = req.params.id
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    Trail.findById(id, (err, trail) => {
+        res.render('trails/show.ejs', {trail})
+    });
+});
 
 
 
