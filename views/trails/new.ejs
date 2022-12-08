@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    
+    <main>
+      <div>
+        <form action="/trails" method="POST">
+            <fieldset>
+                <legend>Add a New Trail to Planner</legend>
+                <label>
+                    NAME:<input
+                    type="text"
+                    name="name"
+                    placeholder="enter trail name"
+                    />
+                </label><br>
+                <label>
+                    LOCATION:<input
+                    type="text"
+                    name="location"
+                    placeholder="enter trail location"
+                    />
+                </label><br>
+                <label>
+                    DISTANCE:<input
+                    type="text"
+                    name="distance"
+                    placeholder="enter ft or miles"
+                    />
+                </label><br>
+                <label>
+                    PRIMARY DIRECTION:<input
+                    type="text"
+                    name="primaryDirection"
+                    placeholder="enter direction of trail"
+                    />
+                </label><br>
+                <label>
+                    DIFFICULTY:<input
+                    type="text"
+                    name="difficulty"
+                    placeholder="black diamond, blue, green"
+                    />
+                </label><br>
+                <label>
+                    IS COMPLETE:<input
+                    type="checkbox"
+                    name="isComplete"
+                    />
+                </label>
+            </fieldset>
+            <input type="submit" value="Add New Trail"/>
+
+        </form>
+
+
+      </div>
+    </main>
+    
+</body>
+</html>

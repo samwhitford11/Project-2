@@ -21,6 +21,11 @@ router.get('/trails', (req, res) => {
     });
 });
 
+// New Route
+router.get('/trails/new', (req, res) => {
+    res.render("trails/new.ejs")
+});
+
 //Show Route
 router.get('/trails/:id', (req, res) => {
     const id = req.params.id
@@ -30,6 +35,14 @@ router.get('/trails/:id', (req, res) => {
     });
 });
 
+//Create Route / POST
+router.post("/trails", (req ,res) => {
+    req.body.isComplete = req.body.isComplete === 'on' ? true: false;
+    Trail.create(req.body, (err, createdTrail) => {
+        console.log('created', createdTrail, err)
+        res.redirect("/trails")
+    });
+});
 
 
 
