@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %> 
+
+<body>
+   
+    <main>
+        <h1> Edit Trail</h1>
+        <div>
+            <form action="/trails/<%= trail._id %>?_method=PUT" method="POST" >
+            
+                <fieldset>
+                    <legend>Edit a <%= trail.name %></legend>
+                    <label>
+                        NAME: <input 
+                            type="text"
+                            name="name"
+                            value="<%= trail.name %>"
+                            placeholder="enter trail name"
+                        />
+                    </label> <br>
+                    <label>
+                        LOCATION: <input 
+                            type="text"
+                            name="location"
+                            value="<%= trail.loctaion %>"
+                            placeholder="enter the location"
+                        />
+                    </label> <br>
+                    <label>
+                        DISTANCE: <input 
+                            type="text"
+                            name="distance"
+                            value="<%= trail.distance %>"
+                            placeholder="enter trail distance"
+                        />
+                    </label><br>
+                    <label>
+                        PRIMARY DIRECTION: <input 
+                            type="text"
+                            name="primaryDirection"
+                            value="<%= trail.primaryDirection %>"
+                            placeholder="enter trail direction"
+                        />
+                    </label> <br>
+                    <label>
+                        DIFFICULTY: <input 
+                            type="text"
+                            name="difficulty"
+                            value="<%= trail.difficulty %>"
+                            placeholder="blck dimnd, blue, green"
+                        />
+                    </label> <br>
+                    <label>
+                        IS COMPLETE: <input type="checkbox" name="isComplete" <%= trail.isComplete ? "checked" : "" %> />
+                    </label>
+                    
+                </fieldset>
+                <input type="submit" value="Update <%= trail.name%>" />
+            </form> 
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

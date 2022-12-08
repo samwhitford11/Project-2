@@ -44,7 +44,25 @@ router.post("/trails", (req ,res) => {
     });
 });
 
+// Edit Route
+router.get('/trails/:id/edit', (req, res)=> {
+    const id = req.params.id
+    Trail.findById(id, (err, foundTrail) => {
+        res.render('trails/edit.ejs', { trail: foundTrail})
+    });
+});
 
+// Update Route
+router.put('/trails/:id', (req, res) => {
+    req.body.isComplete = req.body.isComplete === 'on' ? true: false
+    Trail.findByIdAndUpdate(req.params.id, req.body,
+        {new: true},(err, updateTrail) => {
+            console.log(updateTrail)
+            res.redirect(`/trails/${req.params.id}`)
+        });
+});
+
+// Delete Route
 
 
 
