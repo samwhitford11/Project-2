@@ -16,7 +16,7 @@ router.get('/trails', (req, res) => {
     Trail.find({})
     //.then gives access to the data found by .find method. pass a callback func to the .then to manipulate the data, trails reps the data
     .then((trails) => {
-        console.log(trails, "theses are the trails")
+        // console.log(trails, "theses are the trails")
         res.render("trails/index.ejs", {trails});
     });
 });
@@ -65,11 +65,15 @@ router.delete('/trails/:id', async (req, res) => {
 //Show Route
 router.get('/trails/:id', (req, res) => {
     const id = req.params.id
+    console.log(id, "this is the id")
 
-    Trail.findById(id, (err, trail) => {
-        res.render('trails/show.ejs', {trail})
+    Trail.findById(id)
+        .then((trail) => {
+            res.render('trails/show.ejs', {trail})
+        })
+        
     });
-});
+
 
 
 
