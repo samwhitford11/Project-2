@@ -1,7 +1,37 @@
 * {
     font-family: 'Rubik 80s Fade', cursive;
-    background-color: aqua;
+    background-image: url(https://images.pexels.com/photos/5274201/pexels-photo-5274201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    
 }
-.button{
-    color: orange;
+
+button{
+    background-color: orange;
+    padding: 10px 24px;
+    margin: 1%;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
+  button:hover{
+    background-color: black;
+    color:orange;
+  }
+
+  fieldset{
+    background: white;
+    border: thin solid gray;
+    color: black;
+    text-transform: none;
+
+  }
+  legend {
+    font-size: 1.4em;
+    text-transform: uppercase;
+    color: #000;
+    }
+
+    label{
+        background-color: white;
+    }
+
+
+
