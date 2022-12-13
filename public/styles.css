@@ -1,11 +1,24 @@
 * {
     font-family: 'Rubik 80s Fade', cursive;
-    background-image: url(https://images.pexels.com/photos/5274201/pexels-photo-5274201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    margin:auto;
+    text-align: center;
+    padding: 2px;
+    
+    
     
 }
 
+body{
+    background-image: url(https://images.pexels.com/photos/10404370/pexels-photo-10404370.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    background-position: center; 
+    background-attachment: fixed;
+    align-items: center;
+}
+
 button{
-    background-color: orange;
+    background-color:orangered;
     padding: 10px 24px;
     margin: 1%;
     transition-duration: 0.4s;
@@ -13,25 +26,63 @@ button{
   }
   button:hover{
     background-color: black;
-    color:orange;
+    color:orangered;
   }
 
   fieldset{
-    background: white;
     border: thin solid gray;
     color: black;
     text-transform: none;
+    padding: 10px;
 
   }
   legend {
     font-size: 1.4em;
     text-transform: uppercase;
     color: #000;
+    padding: 10px;
     }
 
     label{
-        background-color: white;
+        background-color: transparent;
+        padding: 3px;
     }
+
+    input::placeholder{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+
+    h2{
+        padding:10px;
+        color:linear-gradient(to left, #553c9a, #b393d3);
+    }
+
+    h3{
+        padding:7px;
+    }
+
+    header h1 {
+        font-size: 60px;
+        font-weight: 600;
+        background-image: linear-gradient(to left, #436cb7, #000000);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        @import url('https://css.gg/shape-hexagon.css');
+         padding-bottom: 20px;
+      }
+
+      a:visited{
+        color: #33538e;
+      }
+
+      a:link{
+        color:black;
+      }
+
+      a:hover{
+        color: #5c5d5e;
+      }
 
 
 
